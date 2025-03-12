@@ -9,7 +9,7 @@ This repository provides a **starter template** for Flutter projects along with 
 
 ## 📦 Folder Structure
 ```
-flutter-template/ 
+flutter-setup-script/ 
 ── my_flutter_template/ # Contains your custom Flutter project files 
 ── setup_flutter_project.sh # The Bash script to create a new project 
 ── README.md # Instructions on how to use the template
@@ -19,8 +19,8 @@ flutter-template/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/flutter-template.git
-   cd flutter-template
+   git clone https://github.com/e-ashitey/flutter-setup-script.git
+   cd flutter-setup-script
    ```
    
 2. **Run the Setup Script**
