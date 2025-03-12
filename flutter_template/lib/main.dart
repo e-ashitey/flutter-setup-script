@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/app/app_exports.dart'
+    show Config, GlobalErrorLogger, MainApp, secureStorageProvider;
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  // Initialize the configuration
+  await Config().init();
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  runApp(
+    ProviderScope(
+      overrides: [
+        secureStorageProvider.overrideWithValue(Config().secureStorage),
+      ],
+      observers: [GlobalErrorLogger()],
+      child: const MainApp(),
+    ),
+  );
 }
