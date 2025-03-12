@@ -43,3 +43,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Env files
+.env
+
+# Generated files
+*.g.dart
+*.freezed.dart
+*.gen.dart
+*.mapper.dart
+android/app/.cxx
