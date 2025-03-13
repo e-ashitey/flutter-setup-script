@@ -33,6 +33,9 @@ sed -i "s/$TEMPLATE_NAME/$PROJECT_NAME/g" pubspec.yaml
 # Install dependencies
 flutter pub get
 
+# Run buil-runner
+dart run build_runner build --delete-conflicting-outputs
+
 # Echo message for package updates
 echo "✅ Setup complete!"
 echo "📌 Run the following command to ensure all packages are up to date:"
